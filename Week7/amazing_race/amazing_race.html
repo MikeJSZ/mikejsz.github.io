@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="description" content="Your description goes here">
+    	<meta name="keywords" content="one, two, three">
+	
+		<title>Racer</title>
+		
+		<!-- external CSS link -->
+        <link href="http://fonts.googleapis.com/css?family=Play:400,700" rel="stylesheet" type="text/css">
+
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/styles.css">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="amazing_race.js"></script>
+	</head>
+	<body>
+        <div id="topDiv" class="top">
+            <h1>Amazing Race</h1>
+            <img id="logo" src="./img/race-car.png" alt="Race Car">
+        </div>
+
+        <div class="box content">
+            <label>Number of players</label> <br>
+            <select id="num_of_players" style="width: 100px;">
+                <option value="1">1</option>
+                <option value="2" selected="">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <br> <br>
+
+            <div id="player_name_inputs">
+                <input type="text" id="player1_name" placeholder="Player1 Name"><br>
+                <input type="text" id="player2_name" placeholder="Player2 Name"><br>
+            </div>
+        </div>
+        <div>
+            <a href="#" id="race_btn">Race!</a>
+        </div>
+	</body>
+</html>

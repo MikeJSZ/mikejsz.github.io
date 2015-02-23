@@ -1,0 +1,120 @@
+table {
+	border: 1px solid gray;
+	width: 600px;
+	height: 15px;
+	margin: 15px auto 0;
+}
+
+td {
+	border: 1px solid gray;
+}
+
+input {
+   text-align:center;
+   font-family: 'Play', sans-serif;
+}
+
+select {
+	font-family: 'Play', sans-serif;
+}
+
+.player-1 .active {
+	background-color: blue;
+}
+
+.player-2 .active {
+	background-color: red;
+}
+
+.player-3 .active {
+	background-color: yellow;
+}
+
+.player-4 .active {
+	background-color: green;
+}
+
+.player-5 .active {
+	background-color: purple;
+}
+
+html, body {
+    height: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+	font-family: 'Play', sans-serif;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+tr {
+
+}
+
+.content {
+	display: table;
+  	margin-left: auto;
+  	margin-right: auto;
+  	padding: 10px;
+
+	text-align: center;
+}
+
+.content label {
+	margin: 5px;
+}
+
+.content select {
+	margin: 5px;
+
+}
+
+.content input {
+	margin: 5px;
+}
+
+.box {
+	border: 3px solid #CC0000;
+	border-radius: 5px;
+}
+
+.top h1 {
+	font-size: 2.5em;
+	text-align: center;
+	margin: 2px;
+	color: #CC0000;
+}
+
+.top img#logo {
+	max-height: 2.5em;
+	display: block;
+	margin-left: auto;
+  	margin-right: auto;
+  	margin-top: 3px;
+  	margin-bottom: 5px;
+}
+
+#race_btn {
+	font-family: 'Play', sans-serif;
+	margin: 15px;
+	padding: 10px 35px;
+	text-align: center;
+
+	display: table;
+	margin-left: auto;
+  	margin-right: auto;
+
+  	background-color: #CC0000;
+  	color: white;
+
+  	text-decoration: none;
+
+  	border-radius: 5px;
+}
