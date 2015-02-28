@@ -44,9 +44,9 @@ function getAPIError() {
 }
 
 function parseData(data) {
-    $("#sun-rise .time").text = data["results"]["sunrise"];
-    $("#noon .time").text = data["results"]["solar_noon"];
-    $("#sun-set .time").text = data["results"]["sunset"];
+    $("#sun-rise .time").text(data["results"]["sunrise"]);
+    $("#noon .time").text(data["results"]["solar_noon"]);
+    $("#sun-set .time").text(data["results"]["sunset"]);
 }
 
 //helper functions
