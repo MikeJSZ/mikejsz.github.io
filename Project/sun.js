@@ -64,7 +64,7 @@ function loadSunPos(sunriseDate, sunsetDate) {
 
     var progress = (nowMinute / (sunsetMinute - sunriseMinute)) * 93;
 
-    $("#sun-img").css("margin-left", progress"%");
+    $("#sun-img").css("margin-left", progress+"%");
 }
 
 //helper functions
