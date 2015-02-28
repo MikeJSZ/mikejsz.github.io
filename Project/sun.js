@@ -9,6 +9,8 @@ $(document).ready(function() {
     getLocation();
     updateTimeInterval = window.setInterval(updateTime, 999);
     getLocationInterval = window.setInterval(getLocation, 1000*60);
+
+    $("#setDateTimeBtn").onClick(clickSetTimeDateBtn);
 });
 
 function updateTime() {
@@ -17,8 +19,6 @@ function updateTime() {
 
 	$("#date_section #day_of_week").text(moment(date).format("ddd. h:mm:ss A"));
 	$("#date_section #date").text(moment(date).format("MMMM DD, YYYY"));
-
-    $("#setDateTimeBtn").onClick(clickSetTimeDateBtn);
 }
 
 function clickSetTimeDateBtn(btn) {
