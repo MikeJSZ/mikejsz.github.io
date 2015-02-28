@@ -5,7 +5,7 @@ $(document).ready(function() {
 	// Put your code in here!
     updateTime();
     getLocation();
-    window.setInterval(updateTime, 1000);
+    window.setInterval(updateTime, 999);
     window.setInterval(getLocation, 1000*60);
 });
 
