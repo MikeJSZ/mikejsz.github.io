@@ -44,9 +44,27 @@ function getAPIError() {
 }
 
 function parseData(data) {
-    $("#sun-rise .time").text(getLocalDateFromUTCDate(data["results"]["sunrise"]));
-    $("#noon .time").text(getLocalDateFromUTCDate(data["results"]["solar_noon"]));
-    $("#sun-set .time").text(getLocalDateFromUTCDate(data["results"]["sunset"]));
+    var sunriseDate = getLocalDateFromUTCDate(data["results"]["sunrise"]);
+    var noonDate = getLocalDateFromUTCDate(data["results"]["solar_noon"]);
+    var sunsetDate = getLocalDateFromUTCDate(data["results"]["sunset"]);
+
+    $("#sun-rise .time").text(moment(sunriseDate).format("h:mm:ss A"));
+    $("#noon .time").text(moment(noonDate).format("h:mm:ss A"));
+    $("#sun-set .time").text(moment(sunsetDate).format("h:mm:ss A"));
+
+    loadSunPos(sunriseDate, sunsetDate);
+}
+
+function loadSunPos(sunriseDate, sunsetDate) {
+    var timeNow = moment();
+    timeNow.local();
+    nowMinute = timeNow.hours() * 60 + timeNow.minutes();
+    sunriseMinute = sunriseDate.hours() * 60 + sunriseDate.minutes();
+    sunsetMinute = sunsetDate.hours() * 60 + sunsetDate.minutes();
+
+    var progress = (nowMinute / (sunsetMinute - sunriseMinute)) * 93;
+
+    $("#sun-img").css("margin-left", progress"%");
 }
 
 //helper functions
@@ -62,5 +80,5 @@ function getLocalDateFromUTCDate(utcDateString) {
 
     localDate = localDate.add(-offsetHours, 'hours');
 
-    return moment(localDate).format("h:mm:ss A");
+    return localDate;
 }
