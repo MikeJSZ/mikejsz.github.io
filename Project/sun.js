@@ -1,12 +1,14 @@
 var APIEndPoint = "http://api.sunrise-sunset.org/json?"
 var date;
+var updateTimeInterval;
+var getLocationInterval;
 
 $(document).ready(function() {
 	// Put your code in here!
     updateTime();
     getLocation();
-    window.setInterval(updateTime, 999);
-    window.setInterval(getLocation, 1000*60);
+    updateTimeInterval = window.setInterval(updateTime, 999);
+    getLocationInterval = window.setInterval(getLocation, 1000*60);
 });
 
 function updateTime() {
@@ -15,6 +17,15 @@ function updateTime() {
 
 	$("#date_section #day_of_week").text(moment(date).format("ddd. h:mm:ss A"));
 	$("#date_section #date").text(moment(date).format("MMMM DD, YYYY"));
+
+    $("#setDateTimeBtn").onClick()
+}
+
+function clickSetTimeDateBtn(btn) {
+    window.clearInterval(updateTimeInterval);
+    window.clearInterval(getLocationInterval);
+
+    $("#setTimeDate").html("<input id=\"datetime\" type=\"datetime\">");
 }
 
 function getLocation() {
