@@ -58,12 +58,7 @@ function displayError(errorInfo) {
 
 function getLocalDateFromUTCDate(utcDateString) {
     var offsetHours = date.getTimezoneOffset() / 60;
-    var localDate = new Date(utcDateString).addHours(offsetHours);
+    var localDate = new moment(utcDateString).add(offsetHours, 'hours');
 
-    return moment.unix(localDate.toString()).format("HH:MM:SS A");
-}
-
-Date.prototype.addHours= function(h){
-    this.setHours(this.getHours()+h);
-    return this;
+    return localDate.format("HH:MM:SS A");
 }
