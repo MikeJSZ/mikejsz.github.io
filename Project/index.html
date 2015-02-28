@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sun</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js"></script>
+	<script src="sun.js"></script>
+</head>
+<body>
+	<div id="container">
+		<header class="header">
+			<a href="#" id="refresh_page">Sun</a>
+		</header> 
+
+		<div id="main">
+			<div id="content">
+
+				<img id="sun-img" src="http://media.giphy.com/media/10d3NDzD40xb0s/giphy.gif" style="float: left;">
+
+				<hr id="divider" style="clear: left;">
+
+				<div id="sun-info" class="clearfix">
+					<div id="sun-rise">
+						<h3>Sunrise</h3>
+						<h3 class="time">00:00:00 AM</h3>
+					</div>
+					<div id="noon">
+						<h3>Solar Noon</h3>
+						<h3 class="time">00:00:00 AM</h3>
+					</div>
+					<div id="sun-set">
+						<h3>Sunset</h3>
+						<h3 class="time">00:00:00 AM</h3>
+					</div>
+				</div>
+
+				<div id="date_section" class="clearfix">
+					<h4 id="day_of_week">Day</h4>
+					<h4 id="date">Date</h4>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div id="error-prototype" style="display: none;">
+		<h3>{{errorTitle}}</h3>
+		<h5>{{errorText}}</h5>
+	</div>
+
+	<div id="loading" style="display: none;">
+		<h3>Loading Location...<h3>
+		</div>
+	</div>
+</body>
+
+</html>
