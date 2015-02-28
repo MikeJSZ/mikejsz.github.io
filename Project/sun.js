@@ -18,7 +18,7 @@ function updateTime() {
 	$("#date_section #day_of_week").text(moment(date).format("ddd. h:mm:ss A"));
 	$("#date_section #date").text(moment(date).format("MMMM DD, YYYY"));
 
-    $("#setDateTimeBtn").onClick()
+    $("#setDateTimeBtn").onClick(clickSetTimeDateBtn);
 }
 
 function clickSetTimeDateBtn(btn) {
