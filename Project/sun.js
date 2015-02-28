@@ -34,7 +34,7 @@ function showPosition(position) {
 }
 
 function getSunPosFromAPI(position) {
-    $.get(APIEndPoint + "lat=" + position.coords.latitude + "&lng=" + position.coords.longitude + "&date=today")
+    $.get(APIEndPoint + "lat=" + position.coords.latitude + "&lng=" + position.coords.longitude + "&date=today" + "&callback=?")
     .success(parseData)
     .fail(getAPIError);
 }
@@ -44,9 +44,9 @@ function getAPIError() {
 }
 
 function parseData(data) {
-    $("#sun-rise .time").text = date["sunrise"];
-    $("#noon .time").text = date["solar_noon"];
-    $("#sun-set .time").text = date["sunset"];
+    $("#sun-rise .time").text = data["sunrise"];
+    $("#noon .time").text = data["solar_noon"];
+    $("#sun-set .time").text = data["sunset"];
 }
 
 //helper functions
