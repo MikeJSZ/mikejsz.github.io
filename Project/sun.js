@@ -10,7 +10,7 @@ $(document).ready(function() {
     updateTimeInterval = window.setInterval(updateTime, 999);
     getLocationInterval = window.setInterval(getLocation, 1000*60);
 
-    $("#setDateTimeBtn").onClick(clickSetTimeDateBtn);
+    $("#setDateTimeBtn").click(clickSetTimeDateBtn);
 });
 
 function updateTime() {
