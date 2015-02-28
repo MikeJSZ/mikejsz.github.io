@@ -62,7 +62,13 @@ function loadSunPos(sunriseDate, sunsetDate) {
     sunriseMinute = sunriseDate.hours() * 60 + sunriseDate.minutes();
     sunsetMinute = sunsetDate.hours() * 60 + sunsetDate.minutes();
 
-    var progress = (nowMinute / (sunsetMinute - sunriseMinute)) * 93;
+    var progress = ((nowMinute - sunriseMinute) / (sunsetMinute - sunriseMinute)) * 95;
+
+    if (progress < 0) {
+        progress = 0;
+    } else if (progress > 95) {
+        position = 95;
+    }
 
     $("#sun-img").css("margin-left", progress+"%");
 }
