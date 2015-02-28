@@ -34,7 +34,7 @@ function showPosition(position) {
 }
 
 function getSunPosFromAPI(position) {
-    $.getJSON(APIEndPoint + "lat=" + position.coords.latitude + "&lng=" + position.coords.longitude + "&date=" + date.format("YYYY-MM-DD"); + "&callback=?")
+    $.getJSON(APIEndPoint + "lat=" + position.coords.latitude + "&lng=" + position.coords.longitude + "&date=" + date.format("YYYY-MM-DD") + "&callback=?")
     .done(parseData)
     .fail(getAPIError);
 }
