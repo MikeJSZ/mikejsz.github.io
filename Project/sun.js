@@ -53,6 +53,9 @@ function parseData(data) {
     $("#sun-set .time").text(moment(sunsetDate).format("h:mm:ss A"));
 
     loadSunPos(sunriseDate, sunsetDate);
+
+    $("#content").css("display":"inline");
+    $("#loading").css("display":"none");
 }
 
 function loadSunPos(sunriseDate, sunsetDate) {
@@ -71,6 +74,8 @@ function loadSunPos(sunriseDate, sunsetDate) {
     }
 
     $("#sun-img").css("margin-left", progress+"%");
+
+    $
 }
 
 //helper functions
@@ -78,6 +83,8 @@ function displayError(errorInfo) {
     var item_html = $("#error-prototype").html();
     var innerHTML = Mustache.render(item_html, errorInfo);
     $("#content").html(innerHTML);
+    $("#content").css("display":"inline");
+    $("#loading").css("display":"none");
 }
 
 function getLocalDateFromUTCDate(utcDateString) {

@@ -100,6 +100,12 @@ div#main {
      margin-left: 3%;
 }
 
+#loading-img {
+     width: 60px;
+     height: 60px;
+     padding: 15px;
+}
+
 #divider {
      width: 85%;
 }
