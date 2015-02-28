@@ -3,18 +3,18 @@ var date;
 
 $(document).ready(function() {
 	// Put your code in here!
-
-	updateTime();
-	getLocation();
+    updateTime();
+    getLocation();
+    window.setInterval(updateTime, 1000);
+    window.setInterval(getLocation, 1000*60);
 });
 
 function updateTime() {
-    date = new Date();
-	time = date.getTime();
-	time = Math.round(time / 1000);
-	var dayArray = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-	$("#date_section #day_of_week").text(dayArray[moment.unix(time).format("E")-1]);
-	$("#date_section #date").text(moment.unix(time).format("MMMM DD, YYYY"));
+    date = new moment();
+    date.local();
+
+	$("#date_section #day_of_week").text(moment(date).format("ddd. h:mm:ss A"));
+	$("#date_section #date").text(moment(date).format("MMMM DD, YYYY"));
 }
 
 function getLocation() {
@@ -88,7 +88,7 @@ function displayError(errorInfo) {
 }
 
 function getLocalDateFromUTCDate(utcDateString) {
-    var offsetHours = date.getTimezoneOffset() / 60;
+    var offsetHours = date.utcOffset() / 60;
     var localDate = new moment(utcDateString, "h:mm:ss A");
 
     localDate = localDate.add(-offsetHours, 'hours');
