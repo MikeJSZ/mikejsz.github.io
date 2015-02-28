@@ -54,8 +54,8 @@ function parseData(data) {
 
     loadSunPos(sunriseDate, sunsetDate);
 
-    $("#content").css("display":"inline");
-    $("#loading").css("display":"none");
+    $("#content").css("display","inline");
+    $("#loading").css("display","none");
 }
 
 function loadSunPos(sunriseDate, sunsetDate) {
@@ -83,8 +83,8 @@ function displayError(errorInfo) {
     var item_html = $("#error-prototype").html();
     var innerHTML = Mustache.render(item_html, errorInfo);
     $("#content").html(innerHTML);
-    $("#content").css("display":"inline");
-    $("#loading").css("display":"none");
+    $("#content").css("display","inline");
+    $("#loading").css("display","none");
 }
 
 function getLocalDateFromUTCDate(utcDateString) {
