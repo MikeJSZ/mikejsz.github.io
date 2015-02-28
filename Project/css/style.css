@@ -124,3 +124,7 @@ div#main {
      float: left;
      width: 33%;
 }
+
+#setTimeDate {
+     padding: 20px;
+}
