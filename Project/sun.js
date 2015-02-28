@@ -44,9 +44,9 @@ function getAPIError() {
 }
 
 function parseData(data) {
-    $("#sun-rise .time").text(data["results"]["sunrise"]);
-    $("#noon .time").text(data["results"]["solar_noon"]);
-    $("#sun-set .time").text(data["results"]["sunset"]);
+    $("#sun-rise .time").text(getLocalDateFromUTCDate(data["results"]["sunrise"]));
+    $("#noon .time").text(getLocalDateFromUTCDate(data["results"]["solar_noon"]));
+    $("#sun-set .time").text(getLocalDateFromUTCDate(data["results"]["sunset"]));
 }
 
 //helper functions
@@ -54,4 +54,16 @@ function displayError(errorInfo) {
     var item_html = $("#error-prototype").html();
     var innerHTML = Mustache.render(item_html, errorInfo);
     $("#content").html(innerHTML);
+}
+
+function getLocalDateFromUTCDate(utcDateString) {
+    var offsetHours = date / 60;
+    var localDate = new Date(utcDateString).addHours(offsetHours);
+
+    return moment.unix(localDate).format("HH:MM:SS A"));
+}
+
+Date.prototype.addHours= function(h){
+    this.setHours(this.getHours()+h);
+    return this;
 }
