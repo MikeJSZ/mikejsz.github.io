@@ -1,5 +1,5 @@
 var APIEndPoint = "http://api.sunrise-sunset.org/json?"
-var time;
+var date;
 
 $(document).ready(function() {
 	// Put your code in here!
@@ -9,7 +9,8 @@ $(document).ready(function() {
 });
 
 function updateTime() {
-	time = new Date().getTime();
+    date = new Date();
+	time = date.getTime();
 	time = Math.round(time / 1000);
 	var dayArray = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 	$("#date_section #day_of_week").text(dayArray[moment.unix(time).format("E")-1]);
