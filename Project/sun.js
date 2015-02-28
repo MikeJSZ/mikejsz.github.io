@@ -25,7 +25,7 @@ function clickSetTimeDateBtn(btn) {
     window.clearInterval(updateTimeInterval);
     window.clearInterval(getLocationInterval);
 
-    $("#setTimeDate").html("<input id=\"datetime\" type=\"datetime\">");
+    $("#setTimeDate").html("<input id=\"datetime\" type=\"datetime-local\">");
 }
 
 function getLocation() {
