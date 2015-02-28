@@ -44,9 +44,9 @@ function getAPIError() {
 }
 
 function parseData(data) {
-    $("#sun-rise .time").text(getLocalDateFromUTCDate(data["results"]["sunrise"]));
-    $("#noon .time").text(getLocalDateFromUTCDate(data["results"]["solar_noon"]));
-    $("#sun-set .time").text(getLocalDateFromUTCDate(data["results"]["sunset"]));
+    $("#sun-rise .time").text(getLocalDateFromUTCDate(data["results"]["sunrise"]);
+    $("#noon .time").text(getLocalDateFromUTCDate(data["results"]["solar_noon"]);
+    $("#sun-set .time").text(getLocalDateFromUTCDate(data["results"]["sunset"]);
 }
 
 //helper functions
