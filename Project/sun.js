@@ -82,7 +82,9 @@ function loadSunPos(sunriseDate, sunsetDate) {
 
     if (progress < 3) {
         progress = 3;
-    } else if (progress > 87) {
+    }
+
+    if (progress > 87) {
         position = 87;
     }
 
