@@ -82,8 +82,8 @@ function loadSunPos(sunriseDate, sunsetDate) {
 
     if (progress < 3) {
         progress = 3;
-    } else if (progress > 87) {
-        progress = 87;
+    } else if (progress > 90) {
+        progress = 90;
     }
 
     $("#sun-img").css("margin-left", progress+"%");
